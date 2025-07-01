@@ -1,0 +1,24 @@
+{
+  "name": "utcode-chat-app",
+  "type": "module",
+  "private": true,
+  "workspaces": ["packages/convex", "packages/components", "packages/client"],
+  "scripts": {
+    "dev:all": "bun run --filter=@packages/* dev",
+    "dev": "bun run --filter='@packages/{client,convex}' dev",
+    "prepare": "bun run --filter=@packages/* prepare",
+    "check": "bun run check:format",
+    "fix": "bun run fix:format",
+    "check:format": "prettier --check .",
+    "fix:format": "prettier --write .",
+    "convex": "cd packages/convex && bun run convex"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-svelte": "^3.4.0",
+    "prettier-plugin-tailwindcss": "^0.6.13"
+  }
+}

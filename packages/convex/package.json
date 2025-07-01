@@ -1,0 +1,18 @@
+{
+  "name": "@packages/convex",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run convex dev --env-file=../../.env"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.17"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "convex": "^1.25.2"
+  }
+}

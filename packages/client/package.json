@@ -1,0 +1,34 @@
+{
+  "name": "@packages/client",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepare": "svelte-kit sync || echo ''",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^6.0.1",
+    "@sveltejs/kit": "^2.22.2",
+    "@sveltejs/vite-plugin-svelte": "^5.1.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "daisyui": "^5.0.43",
+    "svelte": "^5.34.9",
+    "svelte-check": "^4.2.2",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.0"
+  },
+  "dependencies": {
+    "@packages/components": "workspace:components",
+    "@packages/convex": "workspace:convex",
+    "@sveltejs/adapter-static": "^3.0.8",
+    "convex": "^1.25.2",
+    "convex-svelte": "^0.0.11",
+    "runed": "^0.29.1"
+  }
+}

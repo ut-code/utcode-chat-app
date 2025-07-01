@@ -1,0 +1,20 @@
+<script lang="ts">
+  import { TaskList } from "@packages/components";
+  import { type Id, type Task, api } from "@packages/convex";
+  import { useConvexClient, useQuery } from "convex-svelte";
+
+  const convex = useConvexClient();
+
+  const todos = useQuery(api.tasks.get, {});
+  async function updateTodo(id: Id<"tasks">, data: Partial<Task>) {
+    console.log("mutation start");
+    await convex.mutation(api.tasks.update, { id, ...data });
+    console.log("mutation end");
+  }
+  async function createTodo() {
+    await convex.mutation(api.tasks.create, { text: "", assigner: "" });
+  }
+  $inspect(todos.data);
+</script>
+
+<TaskList {updateTodo} {createTodo} {todos} />
