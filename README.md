@@ -18,3 +18,12 @@ bun dev
 ```
 
 でアプリケーションの動作に必要なものだけ起動します。
+
+## Tauri
+
+Tauri はコンパイルに計算資源をたくさん使うので、 Opt-In になっています。
+
+```sh
+bun dev:convex # バックエンドが必要
+bun dev:tauri
+```

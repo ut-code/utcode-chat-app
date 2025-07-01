@@ -6,6 +6,8 @@
   "scripts": {
     "dev:all": "bun run --filter=@packages/* dev",
     "dev": "bun run --filter='@packages/{client,convex}' dev",
+    "dev:convex": "cd packages/convex && bun run dev",
+    "dev:tauri": "cd packages/client && bun run dev:tauri",
     "prepare": "bun run --filter=@packages/* prepare",
     "check": "bun run check:format",
     "fix": "bun run fix:format",
