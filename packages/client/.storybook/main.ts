@@ -1,5 +1,4 @@
 import type { StorybookConfig } from "@storybook/sveltekit";
-
 import { dirname, join } from "node:path";
 
 /**
@@ -10,7 +9,7 @@ function getAbsolutePath(value: string): string {
 	return dirname(require.resolve(join(value, "package.json")));
 }
 const config: StorybookConfig = {
-	stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|ts|svelte)"],
+	stories: ["../src/stories/**/*.stories.@(js|ts|svelte)"],
 	addons: [
 		getAbsolutePath("@storybook/addon-svelte-csf"),
 		getAbsolutePath("@chromatic-com/storybook"),

@@ -1,5 +1,5 @@
-<script module>
-  import Button from "$lib/components/Button.svelte";
+<script lang="ts" module>
+  import Button from "$components/example/storybook/Button.svelte";
   import { defineMeta } from "@storybook/addon-svelte-csf";
   import { fn } from "storybook/test";
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from "$lib/paraglide/messages.js";
   import { type Id, type Task } from "@packages/convex";
 
   type Props = {
@@ -13,16 +14,20 @@
 </script>
 
 <div class="bg-base-200 m-4 rounded-xl p-4">
-  <h1 class="p-5 text-center text-3xl">Tasks</h1>
+  <h1 class="p-5 text-center text-3xl">{m["example.taskList"]()}</h1>
   {#if todos.isLoading}
-    <p><span class="loading loading-dots"></span>Loading...</p>
+    <p><span class="loading loading-dots"></span>{m["common.loading"]()}</p>
   {:else if todos.error}
     <p>Error: {todos.error.message}</p>
   {:else}
     <ul class="list">
       <li class="list-row">
-        <span class="list-col-grow text-center text-xl">Task</span>
-        <span class="w-80 text-center text-xl">Assigner</span>
+        <span class="list-col-grow text-center text-xl">
+          {m["example.task"]()}
+        </span>
+        <span class="w-80 text-center text-xl">
+          {m["example.assigner"]()}
+        </span>
       </li>
       {#each todos.data as todo}
         <li class="list-row">
@@ -66,5 +71,7 @@
       {/each}
     </ul>
   {/if}
-  <button class="btn btn-primary" onclick={createTodo}>New</button>
+  <button class="btn btn-primary" onclick={createTodo}>
+    {m["example.new"]()}
+  </button>
 </div>

@@ -2,28 +2,26 @@
 
 ## Development Servers
 
-- Convex at http://localhost:3210
-- Convex Dashboard at http://localhost:6790
-- Web Client at http://localhost:5173
-- Storybook at http://localhost:6006
-
-```sh
-bun dev:all
-```
-
-で全部起動します。
+- Convex (`bun dev:convex`)
+  - Convex at <http://localhost:3210>
+  - Convex Dashboard at <http://localhost:6790>
+- Web Client (`bun dev:web`)
+  - depends on Convex
+  - <http://localhost:5173>
+- Storybook (`bun dev:storybook`)
+  - <http://localhost:6006>
+- Tauri (`bun dev:tauri`)
+  - depends on Convex
+  - conflicts with web client
 
 ```sh
 bun dev
 ```
 
-でアプリケーションの動作に必要なものだけ起動します。
-
-## Tauri
-
-Tauri はコンパイルに計算資源をたくさん使うので、 Opt-In になっています。
+でアプリケーションの動作に必要なものだけ (Convex + Web Client) を起動します。
 
 ```sh
-bun dev:convex # バックエンドが必要
-bun dev:tauri
+bun dev:all
 ```
+
+で上に加え Storybook が起動します。

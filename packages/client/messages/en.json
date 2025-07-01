@@ -1,0 +1,13 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"hello_world": "Hello, {name} from en!",
+	"common": {
+		"loading": "Loading..."
+	},
+	"example": {
+		"taskList": "Tasks",
+		"task": "Task",
+		"assigner": "Assigner",
+		"new": "New"
+	}
+}

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { TaskList } from "@packages/components";
   import { type Id, type Task, api } from "@packages/convex";
   import { useConvexClient, useQuery } from "convex-svelte";
+  import TaskListSkin from "./TaskListSkin.svelte";
 
   const convex = useConvexClient();
 
@@ -17,4 +17,4 @@
   $inspect(todos.data);
 </script>
 
-<TaskList {updateTodo} {createTodo} {todos} />
+<TaskListSkin {updateTodo} {createTodo} {todos} />

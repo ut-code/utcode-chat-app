@@ -1,5 +1,5 @@
-<script module>
-  import Page from "$lib/components/Page.svelte";
+<script lang="ts" module>
+  import Page from "$components/example/storybook/Page.svelte";
   import { defineMeta } from "@storybook/addon-svelte-csf";
   import { expect, userEvent, waitFor, within } from "storybook/test";
 

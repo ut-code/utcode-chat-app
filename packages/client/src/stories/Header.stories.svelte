@@ -1,5 +1,5 @@
-<script module>
-  import Header from "$lib/components/Header.svelte";
+<script lang="ts" module>
+  import Header from "$components/example/storybook/Header.svelte";
   import { defineMeta } from "@storybook/addon-svelte-csf";
   import { fn } from "storybook/test";
 
