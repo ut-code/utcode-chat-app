@@ -1,4 +1,5 @@
 <script lang="ts">
+  import BufferedTextInput from "$lib/atoms/BufferedTextInput.svelte";
   import { m } from "$lib/paraglide/messages.js";
   import { type Id, type Task } from "@packages/convex";
 
@@ -43,8 +44,7 @@
               }
             }
           />
-          <input
-            type="text"
+          <BufferedTextInput
             class="input w-full"
             bind:value={
               () => todo.text,
@@ -55,8 +55,7 @@
               }
             }
           />
-          <input
-            type="text"
+          <BufferedTextInput
             class="input input-bordered"
             bind:value={
               () => todo.assigner,
