@@ -12,12 +12,12 @@
         "typescript": "^5.8.3",
       },
     },
-    "packages/client": {
-      "name": "@packages/client",
+    "apps/client": {
+      "name": "@apps/client",
       "version": "0.0.1",
       "dependencies": {
+        "@apps/convex": "workspace:convex",
         "@inlang/paraglide-js": "^2.1.0",
-        "@packages/convex": "workspace:convex",
         "@sveltejs/adapter-static": "^3.0.8",
         "@tauri-apps/api": "^2.6.0",
         "@tauri-apps/plugin-opener": "^2.4.0",
@@ -47,8 +47,8 @@
         "vite": "^7.0.0",
       },
     },
-    "packages/convex": {
-      "name": "@packages/convex",
+    "apps/convex": {
+      "name": "@apps/convex",
       "dependencies": {
         "convex": "^1.25.2",
       },
@@ -64,6 +64,10 @@
     "@adobe/css-tools": ["@adobe/css-tools@4.4.3", "", {}, "sha512-VQKMkwriZbaOgVCby1UDY/LDk5fIjhQicCvVPFqfe+69fWaPWydbWJ3wRt59/YzIwda1I81loas3oCoHxnqvdA=="],
 
     "@ampproject/remapping": ["@ampproject/remapping@2.3.0", "", { "dependencies": { "@jridgewell/gen-mapping": "^0.3.5", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw=="],
+
+    "@apps/client": ["@apps/client@workspace:apps/client"],
+
+    "@apps/convex": ["@apps/convex@workspace:apps/convex"],
 
     "@babel/code-frame": ["@babel/code-frame@7.27.1", "", { "dependencies": { "@babel/helper-validator-identifier": "^7.27.1", "js-tokens": "^4.0.0", "picocolors": "^1.1.1" } }, "sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg=="],
 
@@ -158,10 +162,6 @@
     "@mdx-js/react": ["@mdx-js/react@3.1.0", "", { "dependencies": { "@types/mdx": "^2.0.0" }, "peerDependencies": { "@types/react": ">=16", "react": ">=16" } }, "sha512-QjHtSaoameoalGnKDT3FoIl4+9RwyTmo9ZJGBdLOks/YOiWHoRDI3PUwEzOE7kEmGcV3AFcp9K6dYu9rEuKLAQ=="],
 
     "@neoconfetti/react": ["@neoconfetti/react@1.0.0", "", {}, "sha512-klcSooChXXOzIm+SE5IISIAn3bYzYfPjbX7D7HoqZL84oAfgREeSg5vSIaSFH+DaGzzvImTyWe1OyrJ67vik4A=="],
-
-    "@packages/client": ["@packages/client@workspace:packages/client"],
-
-    "@packages/convex": ["@packages/convex@workspace:packages/convex"],
 
     "@pkgjs/parseargs": ["@pkgjs/parseargs@0.11.0", "", {}, "sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg=="],
 
