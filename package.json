@@ -15,10 +15,12 @@
     "dev:storybook": "cd apps/client && bun run storybook",
     "prepare": "bun run --filter=* prepare && bun lefthook install",
     "sync": "bun run --filter=* sync",
-    "check": "bun run check:format && bun run --filter=* check",
-    "fix": "bun run fix:format",
+    "check": "bun run check:lint && bun run --filter=* check && bun run check:format",
+    "fix": "bun run fix:format && bun run fix:lint",
     "check:format": "prettier --check .",
+    "check:lint": "biome check",
     "fix:format": "prettier --write .",
+    "fix:lint": "biome check --fix --unsafe",
     "convex": "cd apps/convex && bun run convex",
     "paraglide": "cd apps/client && bun run paraglide"
   },
@@ -26,6 +28,7 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.0.6",
     "lefthook": "^1.11.16",
     "prettier": "^3.6.2",
     "prettier-plugin-svelte": "^3.4.0",

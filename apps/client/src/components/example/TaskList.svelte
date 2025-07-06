@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type Id, type Task, api } from "@apps/convex";
+  import { api, type Id, type Task } from "@apps/convex";
   import { useConvexClient, useQuery } from "convex-svelte";
   import TaskListSkin from "./TaskListSkin.svelte";
 
