@@ -7,7 +7,28 @@ on:
   pull_request:
 
 jobs:
-  check:
+  biome:
+    name: Biome Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run check:lint
+
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run check:format
+
+  all-checks:
+    name: All Checks
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

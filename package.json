@@ -13,7 +13,7 @@
     "dev:convex": "cd apps/convex && bun run dev",
     "dev:tauri": "cd apps/client && bun run dev:tauri",
     "dev:storybook": "cd apps/client && bun run storybook",
-    "prepare": "bun run --filter=* prepare && bun lefthook install",
+    "prepare": "bun run sync && bun lefthook install",
     "sync": "bun run --filter=* sync",
     "check": "bun run check:lint && bun run --filter=* check && bun run check:format",
     "fix": "bun run fix:format && bun run fix:lint",

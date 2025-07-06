@@ -9,7 +9,6 @@
     "build": "vite build",
     "build:tauri": "bun run tauri build",
     "preview": "vite preview",
-    "prepare": "bun sync",
     "sync": "svelte-kit sync && bun run paraglide",
     "check": "bun sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "bun sync && svelte-check --tsconfig ./tsconfig.json --watch",
