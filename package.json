@@ -13,7 +13,8 @@
     "dev:convex": "cd apps/convex && bun run dev",
     "dev:tauri": "cd apps/client && bun run dev:tauri",
     "dev:storybook": "cd apps/client && bun run storybook",
-    "prepare": "bun run --filter=* prepare",
+    "prepare": "bun run --filter=* prepare && bun lefthook install",
+    "sync": "bun run --filter=* sync",
     "check": "bun run check:format && bun run --filter=* check",
     "fix": "bun run fix:format",
     "check:format": "prettier --check .",
@@ -25,6 +26,7 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
+    "lefthook": "^1.11.16",
     "prettier": "^3.6.2",
     "prettier-plugin-svelte": "^3.4.0",
     "prettier-plugin-tailwindcss": "^0.6.13"

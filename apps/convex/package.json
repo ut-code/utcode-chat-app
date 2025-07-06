@@ -4,7 +4,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "bun run convex dev --env-file=../../.env"
+    "dev": "bun run convex dev --env-file=../../.env",
+    "sync": "bun run convex codegen"
   },
   "devDependencies": {
     "@types/bun": "^1.2.17"
