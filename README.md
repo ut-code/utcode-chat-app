@@ -25,3 +25,13 @@ bun dev:all
 ```
 
 で上に加え Storybook が起動します。
+
+### Tauri
+
+Tauri はコンパイルに時間と計算資源を使うので、
+
+```sh
+bun dev:tauri
+```
+
+で明示的に起動しないと起動しません。
