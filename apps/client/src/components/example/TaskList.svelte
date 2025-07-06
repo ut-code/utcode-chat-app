@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type Id, type Task, api } from "@packages/convex";
+  import { type Id, type Task, api } from "@apps/convex";
   import { useConvexClient, useQuery } from "convex-svelte";
   import TaskListSkin from "./TaskListSkin.svelte";
 
@@ -14,7 +14,6 @@
   async function createTodo() {
     await convex.mutation(api.tasks.create, { text: "", assigner: "" });
   }
-  $inspect(todos.data);
 </script>
 
 <TaskListSkin {updateTodo} {createTodo} {todos} />

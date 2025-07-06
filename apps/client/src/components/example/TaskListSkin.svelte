@@ -1,15 +1,12 @@
 <script lang="ts">
-  import BufferedTextInput from "$lib/atoms/BufferedTextInput.svelte";
+  import BufferedTextInput from "$components/atoms/BufferedTextInput.svelte";
   import { m } from "$lib/paraglide/messages.js";
-  import { type Id, type Task } from "@packages/convex";
+  import type { Id, Query, Task } from "@apps/convex";
 
   type Props = {
     updateTodo: (id: Id<"tasks">, data: Partial<Task>) => void;
     createTodo: () => void;
-    todos:
-      | { isLoading: true }
-      | { isLoading: false; error: Error }
-      | { isLoading: false; error: undefined; data: Task[] };
+    todos: Query<Task[]>;
   };
   const { updateTodo, createTodo, todos }: Props = $props();
 </script>

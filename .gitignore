@@ -1,3 +1,13 @@
+# node_modules
 node_modules
+
+# development
 .env
 .direnv
+
+# target
+target
+.svelte-kit
+dist
+
+**/gen/schemas

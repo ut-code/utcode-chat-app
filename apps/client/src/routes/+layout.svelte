@@ -1,7 +1,7 @@
 <script lang="ts">
-  import "../app.css";
+  import "@/app.css";
 
-  import { PUBLIC_CONVEX_URL } from "$env/static/public";
+  import { PUBLIC_CONVEX_URL } from "$lib/env.ts";
   import { setupConvex } from "convex-svelte";
   import type { Snippet } from "svelte";
 
