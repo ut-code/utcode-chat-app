@@ -12,4 +12,6 @@ export default defineConfig({
       outdir: "./src/lib/paraglide",
     }),
   ],
+  envDir: "../..",
+  envPrefix: "PUBLIC_",
 });

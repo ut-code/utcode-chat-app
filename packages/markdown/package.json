@@ -1,0 +1,39 @@
+{
+  "name": "@packages/markdown",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vite dev",
+    "sync": "svelte-kit sync || true",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
+  },
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "peerDependencies": {
+    "svelte": "^5.35.4"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^6.0.1",
+    "@sveltejs/kit": "^2.22.2",
+    "@sveltejs/vite-plugin-svelte": "^5.1.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "daisyui": "^5.0.46",
+    "svelte-check": "^4.2.2",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.2"
+  },
+  "keywords": [
+    "svelte"
+  ],
+  "dependencies": {
+    "@codemirror/lang-markdown": "^6.3.3",
+    "@codemirror/state": "^6.5.2",
+    "@lezer/highlight": "^1.2.1",
+    "@packages/utils": "workspace:*",
+    "codemirror": "^6.0.2",
+    "runed": "^0.30.0"
+  }
+}

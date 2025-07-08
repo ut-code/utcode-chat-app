@@ -14,10 +14,9 @@ const config = {
       assets: "./dist",
     }),
     outDir: "./.svelte-kit",
-    env: {
-      dir: "../../",
-    },
     alias: {
+      "@": "src",
+      "@@": "../..",
       $components: "src/components",
       "~": "src/",
     },

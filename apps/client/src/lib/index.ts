@@ -1,1 +1,1 @@
-export { m } from "./paraglide/messages";
+export { m } from "./paraglide/messages.js";

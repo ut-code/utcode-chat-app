@@ -29,6 +29,12 @@
         "noInferrableTypes": "error",
         "noUselessElse": "error",
       },
+      "correctness": {
+        "useImportExtensions": {
+          "level": "error",
+          "fix": "safe",
+        },
+      },
     },
   },
   "javascript": {

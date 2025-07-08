@@ -15,6 +15,7 @@
     "dev:storybook": "cd apps/client && bun run storybook",
     "prepare": "bun run sync && bun lefthook install",
     "sync": "bun run --filter=* sync",
+    "test": "bun run --filter=* test",
     "check": "bun run check:lint && bun run --filter=* check && bun run check:format",
     "fix": "bun run fix:format && bun run fix:lint",
     "check:format": "prettier --check .",

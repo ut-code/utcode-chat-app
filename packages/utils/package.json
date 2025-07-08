@@ -1,0 +1,30 @@
+{
+  "name": "@packages/utils",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./src/lib/index.ts"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "sync": "svelte-kit sync || true",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest --run"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^6.0.1",
+    "@sveltejs/kit": "^2.22.2",
+    "@sveltejs/vite-plugin-svelte": "^5.1.0",
+    "daisyui": "^5.0.46",
+    "happy-dom": "^18.0.1",
+    "svelte": "^5.35.4",
+    "svelte-check": "^4.2.2",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "svelte": "^5.35.4"
+  }
+}

@@ -1,6 +1,19 @@
 # utcode-chat-app
 
-## Development Servers
+## 開発
+
+utcode-chat-app では、 Monorepo 構成を採用しており、主に
+
+- `apps` -> アプリケーション
+- `packages` -> 独立したライブラリ
+
+という配置になっています。
+
+`packages` はそれぞれ開発方法が違うので、それぞれの README を参考にしてください。
+
+### 開発用サーバー
+
+アプリケーションとして実行するものは `apps` 以下に配置されています。
 
 - Convex (`bun dev:convex`)
   - Convex at <http://localhost:3210>
@@ -26,7 +39,7 @@ bun dev:all
 
 で上に加え Storybook が起動します。
 
-### Tauri
+#### Tauri
 
 Tauri はコンパイルに時間と計算資源を使うので、
 
