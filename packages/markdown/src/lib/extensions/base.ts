@@ -24,12 +24,12 @@ import {
 
 export { EditorView } from "@codemirror/view";
 
-export const basicSetup = [
+export const baseSetup = [
   // lineNumbers(),
-  //   highlightActiveLineGutter(),
+  // highlightActiveLineGutter(),
   highlightSpecialChars(),
   history(),
-  //   foldGutter(),
+  // foldGutter(),
   drawSelection(),
   dropCursor(),
   EditorState.allowMultipleSelections.of(true),
@@ -40,8 +40,8 @@ export const basicSetup = [
   autocompletion(),
   rectangularSelection(),
   crosshairCursor(),
-  //   highlightActiveLine(),
-  //   highlightSelectionMatches(),
+  // highlightActiveLine(),
+  // highlightSelectionMatches(),
   keymap.of([
     ...closeBracketsKeymap,
     ...defaultKeymap,

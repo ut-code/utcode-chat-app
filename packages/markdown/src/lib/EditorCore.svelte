@@ -1,17 +1,20 @@
 <script lang="ts">
-  import { markdown } from "@codemirror/lang-markdown";
-  import { EditorState } from "@codemirror/state";
+  import { EditorState, StateEffect } from "@codemirror/state";
   import { Watcher } from "@packages/utils";
   import { EditorView } from "codemirror";
-  import { basicSetup } from "./extensions/base.ts";
+  import { extensions } from "./extensions.ts";
+  import { oneDark } from "@codemirror/theme-one-dark";
+  import { getTheme } from "./extensions/themes.ts";
 
   interface Props {
     doc?: string;
+    theme: "light" | "dark";
   }
-  let { doc = $bindable("") }: Props = $props();
+  let { doc = $bindable(""), theme = $bindable("light") }: Props = $props();
   let view = $state<EditorView>();
   let el = $state<HTMLDivElement>();
 
+  // document state control
   const docWatcher = new Watcher(
     () => doc,
     (v) => {
@@ -26,21 +29,53 @@
     };
     view?.dispatch({ changes });
   };
-
   const updateListener = EditorView.updateListener.of((update) => {
     if (update.docChanged) {
       docWatcher.set(update.state.doc.toString());
     }
   });
 
-  const editorState = EditorState.create({
-    extensions: [basicSetup, updateListener, markdown()],
+  // theme control
+  $effect(() => {
+    if (!view) return;
+    view.dispatch({
+      effects: StateEffect.reconfigure.of(getConfig(theme)),
+    });
   });
 
+  /**
+   * Get CodeMirror configuration with appropriate theme
+   * Uses built-in oneDark theme for dark mode, no theme extension for light mode
+   */
+  function getConfig(theme: "light" | "dark") {
+    const config = [extensions, updateListener];
+    const themeConfig = getTheme(theme);
+    if (themeConfig) {
+      config.push(themeConfig);
+    }
+    return config;
+  }
+
+  /**
+   * Initialize editor with basic extensions
+   * Footgun: Start with light theme by default to avoid reactive loops
+   */
+  const initialState = EditorState.create({
+    doc: doc,
+    extensions: getConfig(theme),
+  });
+
+  /**
+   * Effect to create and manage CodeMirror editor instance
+   * Recreates editor when theme changes to apply new styling
+   * Footgun: Must destroy previous view to prevent memory leaks
+   */
   $effect(() => {
     if (!el) return;
+
+    // Create initial view
     view = new EditorView({
-      state: editorState,
+      state: initialState,
       parent: el,
     });
 

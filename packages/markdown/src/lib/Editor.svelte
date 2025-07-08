@@ -1,11 +1,11 @@
 <script lang="ts">
-  import CoreEditor from "./EditorCore.svelte";
+  import EditorCore from "./EditorCore.svelte";
 
   interface Props {
     doc?: string;
+    theme: "light" | "dark";
   }
-  let { doc = $bindable("") }: Props = $props();
+  let { doc = $bindable(""), theme }: Props = $props();
 </script>
 
-<!-- TODO: add some styling and additional controls-->
-<CoreEditor bind:doc />
+<EditorCore bind:doc {theme} />
