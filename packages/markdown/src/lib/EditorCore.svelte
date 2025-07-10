@@ -1,10 +1,10 @@
 <script lang="ts">
   import { EditorState, StateEffect } from "@codemirror/state";
+  import { oneDark } from "@codemirror/theme-one-dark";
   import { Watcher } from "@packages/utils";
   import { EditorView } from "codemirror";
-  import { extensions } from "./extensions.ts";
-  import { oneDark } from "@codemirror/theme-one-dark";
   import { getTheme } from "./extensions/themes.ts";
+  import { extensions } from "./extensions.ts";
 
   interface Props {
     doc?: string;
