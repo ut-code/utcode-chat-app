@@ -11,6 +11,11 @@ utcode-chat-app では、 Monorepo 構成を採用しており、主に
 
 `packages` はそれぞれ開発方法が違うので、それぞれの README を参考にしてください。
 
+### セットアップ
+
+- インストール: Bun >= v1.2
+- 実行: `bun install --frozen-lockfile`
+
 ### 開発用サーバー
 
 アプリケーションとして実行するものは `apps` 以下に配置されています。
