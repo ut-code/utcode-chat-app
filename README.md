@@ -4,8 +4,8 @@
 
 utcode-chat-app では、 Monorepo 構成を採用しており、主に
 
-- `apps` -> アプリケーション
-- `packages` -> 独立したライブラリ
+- `apps` -> リリース時に実行するアプリケーション
+- `packages` -> リリース時に直接実行しないライブラリ
 
 という配置になっています。
 
@@ -49,6 +49,7 @@ bun dev:all
 Tauri はコンパイルに時間と計算資源を使うので、
 
 ```sh
+bun dev:convex # Tauri の動作にバックエンドが必要
 bun dev:tauri
 ```
 
