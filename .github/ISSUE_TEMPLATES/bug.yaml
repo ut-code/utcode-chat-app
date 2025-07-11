@@ -1,0 +1,38 @@
+name: Bug Report
+description: バグの報告をする
+type: Bug
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for filing a bug report! 🐛
+  - type: textarea
+    id: problem
+    attributes:
+      label: 概要
+      description: >
+        バグの短い説明と、バグの再現に関係あると思う情報を記入してください。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: 再現方法
+      value: |
+        これをしたとき:
+
+        これが期待されたが:
+
+        代わりにこれが起こった:
+
+  - type: input
+    id: platform
+    attributes:
+      label: プラットフォーム (アプリ版)、ブラウザ (Web 版)
+      placeholder: Linux / macOS / Windows | Chrome / Firefox / Safari
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: バージョン (アプリ版の場合)
+      placeholder: "utcode-chat-app v2025.07.01"
