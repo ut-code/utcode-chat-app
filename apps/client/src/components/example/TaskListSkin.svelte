@@ -1,7 +1,7 @@
 <script lang="ts">
+  import type { Id, Query, Task } from "@apps/convex";
   import BufferedTextInput from "$components/atoms/BufferedTextInput.svelte";
   import { m } from "$lib/paraglide/messages.js";
-  import type { Id, Query, Task } from "@apps/convex";
 
   type Props = {
     updateTodo: (id: Id<"tasks">, data: Partial<Task>) => void;

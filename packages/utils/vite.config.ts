@@ -1,11 +1,10 @@
 /// <reference types="vitest/config" />
 import { sveltekit } from "@sveltejs/kit/vite";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 
 export default defineConfig({
-  // @ts-expect-error: why?
-  plugins: [sveltekit(), tailwindcss()],
+  plugins: [tailwindcss() as Plugin[], sveltekit()],
   test: {
     projects: [
       {
