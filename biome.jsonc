@@ -57,5 +57,15 @@
         },
       },
     },
+    {
+      "includes": ["apps/convex/**/*"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "useImportExtensions": "off",
+          },
+        },
+      },
+    },
   ],
 }
