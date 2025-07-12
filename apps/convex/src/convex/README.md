@@ -33,13 +33,15 @@ export const myQueryFunction = query({
 });
 ```
 
-Using this query function in a React component looks like:
+Using this query function in a Svelte component looks like:
 
-```ts
-const data = useQuery(api.myFunctions.myQueryFunction, {
-  first: 10,
-  second: "hello",
-});
+```svelte
+<script lang="ts">
+  const data = useQuery(api.myFunctions.myQueryFunction, () => ({
+    first: 10,
+    second: "hello",
+  }));
+</script>
 ```
 
 A mutation function looks like:
@@ -70,19 +72,33 @@ export const myMutationFunction = mutation({
 });
 ```
 
-Using this mutation function in a React component looks like:
+Using this mutation function in a Svelte component looks like:
 
-```ts
-const mutation = useMutation(api.myFunctions.myMutationFunction);
-function handleButtonPress() {
-  // fire and forget, the most common way to use mutations
-  mutation({ first: "Hello!", second: "me" });
-  // OR
-  // use the result once the mutation has completed
-  mutation({ first: "Hello!", second: "me" }).then((result) =>
-    console.log(result),
-  );
-}
+```svelte
+<script lang="ts">
+  import { useConvexClient, useQuery } from "convex-svelte";
+
+  const convex = useConvexClient();
+
+  function onclick() {
+    // fire and forget, the most common way to use mutations
+    convex.mutation(api.myFunctions.myMutationFunction, {
+      first: "Hello!",
+      second: "me",
+    });
+
+    // OR
+    // use the result once the mutation has completed
+    convex
+      .mutation(api.myFunctions.myMutationFunction, {
+        first: "Hello!",
+        second: "me",
+      })
+      .then((result) => console.log(result));
+  }
+</script>
+
+<button {onclick}>Click me</button>
 ```
 
 Use the Convex CLI to push your functions to a deployment. See everything

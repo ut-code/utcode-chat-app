@@ -9,7 +9,7 @@
   let { selectedChannelId = $bindable(undefined) }: Props = $props();
 
   const convex = useConvexClient();
-  const channels = useQuery(api.channels.list, {});
+  const channels = useQuery(api.channels.list, () => ({}));
 
   async function createChannel() {
     const name = prompt("チャンネル名を入力してください:");

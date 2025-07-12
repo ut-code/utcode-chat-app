@@ -5,7 +5,7 @@
 
   const convex = useConvexClient();
 
-  const todos = useQuery(api.tasks.get, {});
+  const todos = useQuery(api.tasks.get, () => ({}));
   async function updateTodo(id: Id<"tasks">, data: Partial<Task>) {
     console.log("mutation start");
     await convex.mutation(api.tasks.update, { id, ...data });

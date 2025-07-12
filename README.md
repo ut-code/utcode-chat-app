@@ -54,3 +54,21 @@ bun dev:tauri
 ```
 
 で明示的に起動しないと起動しません。
+
+## 注意点
+
+### convex-svelte の `useQuery` について
+
+`useQuery` に渡す引数は、関数の形式で渡してください。そうでないと、期待しない動作を引き起こす可能性があります。
+
+```svelte
+<script lang="ts">
+  // good
+  const selectedChannel = useQuery(api.channels.get, () => ({
+    id: selectedChannelId,
+  }));
+
+  // bad - この形だと `selectedChannelId` の変更を検知できない
+  const selectedChannel = useQuery(api.channels.get, { id: selectedChannelId });
+</script>
+```

@@ -96,6 +96,28 @@ bun paraglide
 - **Convex Integration**: Uses `convex-svelte` for reactive queries
 - **State Pattern**: Logic components (e.g., TaskList.svelte) separate from presentation (TaskListSkin.svelte)
 
+### 注意点: convex-svelte の `useQuery` について
+
+`useQuery` に渡す引数は、関数の形式で渡してください。そうでないと、期待しない動作を引き起こす可能性があります。
+
+```svelte
+<script lang="ts">
+  // good
+  const selectedChannel = useQuery(api.channels.get, () => ({
+    id: selectedChannelId,
+  }));
+
+  // bad - この形だと `selectedChannelId` の変更を検知できない
+  const selectedChannelBad = useQuery(api.channels.get, {
+    id: selectedChannelId,
+  });
+  // works, but smelly code
+  const selectedChannelSmelly = useQuery(api.channels.list, {});
+  // better - only use getter functions
+  const selectedChannelBetter = useQuery(api.channels.list, () => ({}));
+</script>
+```
+
 ### Backend (Convex)
 
 - **Schema**: Defined in `apps/convex/src/convex/schema.ts`
