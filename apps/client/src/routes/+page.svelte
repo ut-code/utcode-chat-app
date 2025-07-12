@@ -1,5 +1,5 @@
 <script lang="ts">
-  import TaskList from "$components/example/TaskList.svelte";
+  import ChatApp from "$components/chat/ChatApp.svelte";
 </script>
 
-<TaskList />
+<ChatApp />

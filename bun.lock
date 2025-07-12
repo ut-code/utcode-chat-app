@@ -4,14 +4,14 @@
     "": {
       "name": "utcode-chat-app",
       "devDependencies": {
-        "@biomejs/biome": "latest",
-        "lefthook": "latest",
-        "prettier": "latest",
-        "prettier-plugin-svelte": "latest",
-        "prettier-plugin-tailwindcss": "latest",
+        "@biomejs/biome": "^2.1.1",
+        "lefthook": "^1.12.1",
+        "prettier": "^3.6.2",
+        "prettier-plugin-svelte": "^3.4.0",
+        "prettier-plugin-tailwindcss": "^0.6.14",
       },
       "peerDependencies": {
-        "typescript": "latest",
+        "typescript": "^5.8.3",
       },
     },
     "apps/client": {

@@ -7,4 +7,15 @@ export default defineSchema({
     isCompleted: v.boolean(),
     assigner: v.string(),
   }),
+  channels: defineTable({
+    name: v.string(),
+    description: v.optional(v.string()),
+    createdAt: v.number(),
+  }),
+  messages: defineTable({
+    channelId: v.id("channels"),
+    content: v.string(),
+    author: v.string(),
+    createdAt: v.number(),
+  }).index("by_channel", ["channelId"]),
 });
