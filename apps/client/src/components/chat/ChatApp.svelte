@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { api, type Id } from "@apps/convex";
-  import { useQuery } from "convex-svelte";
+  import { type Id } from "@apps/convex";
   import Channel from "./Channel.svelte";
   import ChannelList from "./ChannelList.svelte";
 

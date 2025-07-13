@@ -1,6 +1,5 @@
 <script lang="ts">
   import { EditorState, StateEffect } from "@codemirror/state";
-  import { oneDark } from "@codemirror/theme-one-dark";
   import { Watcher } from "@packages/utils";
   import { EditorView } from "codemirror";
   import { getTheme } from "./extensions/themes.ts";
