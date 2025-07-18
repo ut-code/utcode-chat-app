@@ -1,8 +1,8 @@
-# utcode-chat-app
+# Prism
 
 ## 開発
 
-utcode-chat-app では、 Monorepo 構成を採用しており、主に
+Prism では、 Monorepo 構成を採用しており、主に
 
 - `apps` -> リリース時に実行するアプリケーション
 - `packages` -> リリース時に直接実行しないライブラリ
