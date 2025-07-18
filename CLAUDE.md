@@ -14,12 +14,12 @@ This is a TypeScript monorepo using a Convex backend and SvelteKit frontend with
 - **Internationalization**: Paraglide for i18n (English/Japanese)
 - **Styling**: TailwindCSS v4 with DaisyUI components
 - **Package Manager**: Bun
-- **Monorepo Structure**: Workspaces with `apps/` and `packages/`
+- **Monorepo Structure**: Workspaces with `packages/`
 
 ### Apps Structure
 
-- `apps/client/` - SvelteKit frontend with Tauri integration
-- `apps/convex/` - Convex backend with database schema and functions
+- `packages/client/` - SvelteKit frontend with Tauri integration
+- `packages/convex/` - Convex backend with database schema and functions
 
 ## Development Commands
 
@@ -86,8 +86,8 @@ bun paraglide
 
 ### Frontend (SvelteKit)
 
-- **Routes**: Standard SvelteKit routing in `apps/client/src/routes/`
-- **Components**: Organized in `apps/client/src/components/` with atoms and examples
+- **Routes**: Standard SvelteKit routing in `packages/client/src/routes/`
+- **Components**: Organized in `packages/client/src/components/` with atoms and examples
 - **Aliases**:
   - `@` → `src`
   - `@@` → `../..` (workspace root)
@@ -120,8 +120,8 @@ bun paraglide
 
 ### Backend (Convex)
 
-- **Schema**: Defined in `apps/convex/src/convex/schema.ts`
-- **Functions**: Database operations in `apps/convex/src/convex/[feature].ts`
+- **Schema**: Defined in `packages/convex/src/convex/schema.ts`
+- **Functions**: Database operations in `packages/convex/src/convex/[feature].ts`
 - **Type Safety**: Auto-generated types from schema shared with frontend via workspace dependency
 
 ### Data Flow

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type Id } from "@apps/convex";
+  import { type Id } from "@packages/convex";
   import Channel from "./Channel.svelte";
   import ChannelList from "./ChannelList.svelte";
 

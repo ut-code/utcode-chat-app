@@ -1,5 +1,5 @@
 {
-  "name": "@apps/client",
+  "name": "@packages/client",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -39,7 +39,7 @@
     "vite": "^7.0.4"
   },
   "dependencies": {
-    "@apps/convex": "workspace:convex",
+    "@packages/convex": "workspace:convex",
     "@inlang/paraglide-js": "^2.2.0",
     "@playwright/test": "^1.54.0",
     "@sveltejs/adapter-static": "^3.0.8",

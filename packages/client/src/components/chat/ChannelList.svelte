@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { api, type Id } from "@apps/convex";
+  import { api, type Id } from "@packages/convex";
   import { useConvexClient, useQuery } from "convex-svelte";
 
   interface Props {

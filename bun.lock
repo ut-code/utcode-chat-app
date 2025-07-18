@@ -14,12 +14,12 @@
         "typescript": "^5.8.3",
       },
     },
-    "apps/client": {
-      "name": "@apps/client",
+    "packages/client": {
+      "name": "@packages/client",
       "version": "0.0.1",
       "dependencies": {
-        "@apps/convex": "workspace:convex",
         "@inlang/paraglide-js": "^2.2.0",
+        "@packages/convex": "workspace:convex",
         "@playwright/test": "^1.54.0",
         "@sveltejs/adapter-static": "^3.0.8",
         "@tauri-apps/api": "^2.6.0",
@@ -50,8 +50,8 @@
         "vite": "^7.0.4",
       },
     },
-    "apps/convex": {
-      "name": "@apps/convex",
+    "packages/convex": {
+      "name": "@packages/convex",
       "dependencies": {
         "convex": "^1.25.2",
       },
@@ -114,10 +114,6 @@
     "@adobe/css-tools": ["@adobe/css-tools@4.4.3", "", {}, "sha512-VQKMkwriZbaOgVCby1UDY/LDk5fIjhQicCvVPFqfe+69fWaPWydbWJ3wRt59/YzIwda1I81loas3oCoHxnqvdA=="],
 
     "@ampproject/remapping": ["@ampproject/remapping@2.3.0", "", { "dependencies": { "@jridgewell/gen-mapping": "^0.3.5", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw=="],
-
-    "@apps/client": ["@apps/client@workspace:apps/client"],
-
-    "@apps/convex": ["@apps/convex@workspace:apps/convex"],
 
     "@asamuzakjp/css-color": ["@asamuzakjp/css-color@3.2.0", "", { "dependencies": { "@csstools/css-calc": "^2.1.3", "@csstools/css-color-parser": "^3.0.9", "@csstools/css-parser-algorithms": "^3.0.4", "@csstools/css-tokenizer": "^3.0.3", "lru-cache": "^10.4.3" } }, "sha512-K1A6z8tS3XsmCMM86xoWdn7Fkdn9m6RSVtocUrJYIwZnFVkng/PvkEoWtOWmP+Scc6saYWHWZYbndEEXxl24jw=="],
 
@@ -282,6 +278,10 @@
     "@mdx-js/react": ["@mdx-js/react@3.1.0", "", { "dependencies": { "@types/mdx": "^2.0.0" }, "peerDependencies": { "@types/react": ">=16", "react": ">=16" } }, "sha512-QjHtSaoameoalGnKDT3FoIl4+9RwyTmo9ZJGBdLOks/YOiWHoRDI3PUwEzOE7kEmGcV3AFcp9K6dYu9rEuKLAQ=="],
 
     "@neoconfetti/react": ["@neoconfetti/react@1.0.0", "", {}, "sha512-klcSooChXXOzIm+SE5IISIAn3bYzYfPjbX7D7HoqZL84oAfgREeSg5vSIaSFH+DaGzzvImTyWe1OyrJ67vik4A=="],
+
+    "@packages/client": ["@packages/client@workspace:packages/client"],
+
+    "@packages/convex": ["@packages/convex@workspace:packages/convex"],
 
     "@packages/markdown": ["@packages/markdown@workspace:packages/markdown"],
 
