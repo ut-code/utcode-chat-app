@@ -4,22 +4,22 @@
 
   const isAuthenticated = $derived(useAuth().isAuthenticated);
   const isLoading = $derived(useAuth().isLoading);
-  const { signIn, signOut } = useAuth();
-
-  // With params (e.g., for email+password)
-  function handleEmailSignIn(email: string, password: string) {
-    signIn("email", { email, password });
-  }
 </script>
 
 {#if isLoading}
-  <p>Loading authentication state...</p>
+  <div class="flex h-screen w-full items-center justify-center">
+    <span class="loading loading-dots loading-lg"></span>
+  </div>
 {:else if isAuthenticated}
-  <h1>Welcome, authenticated user!</h1>
-  <button onclick={() => signOut()}>Sign Out</button>
+  <ChatApp />
 {:else}
-  <h1>Please sign in</h1>
-  <button onclick={() => signIn("google")}> Sign in with Google </button>
+  <div class="hero bg-base-100 min-h-screen">
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+        <h1 class="text-7xl font-bold">Prism</h1>
+        <p class="py-6">The ultimate chat tool for engineers.</p>
+        <a href="/signin" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </div>
 {/if}
-
-<ChatApp />
