@@ -1,14 +1,9 @@
 <script lang="ts">
   import "@@/global.css";
 
-  import { setupConvex } from "convex-svelte";
-  import type { Snippet } from "svelte";
-  import { PUBLIC_CONVEX_URL } from "$lib/env.ts";
   import { setupConvexAuth } from "@mmailaender/convex-auth-svelte/sveltekit";
-
-  type Props = {
-    children: Snippet;
-  };
+  import { setupConvex } from "convex-svelte";
+  import { PUBLIC_CONVEX_URL } from "$lib/env.ts";
 
   const { children, data } = $props();
 

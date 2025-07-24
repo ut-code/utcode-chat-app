@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { goto } from "$app/navigation";
   import { useAuth } from "@mmailaender/convex-auth-svelte/sveltekit";
+  import { goto } from "$app/navigation";
 
   const { signIn } = useAuth();
   const isAuthenticated = $derived(useAuth().isAuthenticated);

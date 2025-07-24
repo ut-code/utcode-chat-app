@@ -1,6 +1,6 @@
 <script lang="ts">
-  import ChatApp from "$components/chat/ChatApp.svelte";
   import { useAuth } from "@mmailaender/convex-auth-svelte/sveltekit";
+  import ChatApp from "$components/chat/ChatApp.svelte";
 
   const isAuthenticated = $derived(useAuth().isAuthenticated);
   const isLoading = $derived(useAuth().isLoading);
