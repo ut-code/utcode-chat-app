@@ -12,10 +12,12 @@ export const ResendOTP = Resend({
   async sendVerificationRequest({ identifier: email, provider, token }) {
     const resend = new ResendAPI(provider.apiKey);
     const { error } = await resend.emails.send({
-      from: "My App <onboarding@resend.dev>",
+      from: "Prism <onboarding@resend.dev>",
       to: [email],
-      subject: "Sign in to My App",
-      text: "Your code is " + token,
+      subject: "Your login code for Prism",
+      text: `Use the following verification code to sign in: ${token}
+
+  If you did not request this code, please ignore this email.`,
     });
 
     if (error) {

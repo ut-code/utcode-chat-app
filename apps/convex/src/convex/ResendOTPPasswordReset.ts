@@ -1,7 +1,7 @@
 import Resend from "@auth/core/providers/resend";
 import { Resend as ResendAPI } from "resend";
 import { alphabet, generateRandomString } from "oslo/crypto";
-import { AUTH_RESEND_KEY } from "./env";
+import { AUTH_RESEND_KEY } from "./env.ts";
 
 export const ResendOTPPasswordReset = Resend({
   id: "resend-otp",
@@ -12,10 +12,12 @@ export const ResendOTPPasswordReset = Resend({
   async sendVerificationRequest({ identifier: email, provider, token }) {
     const resend = new ResendAPI(provider.apiKey);
     const { error } = await resend.emails.send({
-      from: "My App <onboarding@resend.dev>",
+      from: "Prism <onboarding@resend.dev>",
       to: [email],
-      subject: "Reset your password in My App",
-      text: "Your password reset code is " + token,
+      subject: "Reset your password in Prism",
+      text: `Use the following password reset code to reset your password: ${token}
+
+  If you did not request this code, please ignore this email.`,
     });
 
     if (error) {
