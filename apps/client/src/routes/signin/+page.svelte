@@ -2,7 +2,9 @@
   import { goto } from "$app/navigation";
   import { useAuth } from "@mmailaender/convex-auth-svelte/sveltekit";
 
-  const { isAuthenticated, isLoading, signIn } = useAuth();
+  const { signIn } = useAuth();
+  const isAuthenticated = $derived(useAuth().isAuthenticated);
+  const isLoading = $derived(useAuth().isLoading);
 
   type Step =
     | "signIn"
@@ -82,6 +84,7 @@
         </h1>
 
         <button
+          type="button"
           class="btn btn-outline mt-4 w-full"
           onclick={() => signIn("google")}
         >
