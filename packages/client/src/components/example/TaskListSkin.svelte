@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Id, Query, Task } from "@apps/convex";
+  import type { Id, Query, Task } from "@packages/convex";
   import BufferedTextInput from "$components/atoms/BufferedTextInput.svelte";
   import { m } from "$lib/paraglide/messages.js";
 

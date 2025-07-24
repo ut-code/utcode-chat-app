@@ -35,4 +35,4 @@ body:
     id: version
     attributes:
       label: バージョン (アプリ版の場合)
-      placeholder: "utcode-chat-app v2025.07.01"
+      placeholder: "Prism v2025.07.01"

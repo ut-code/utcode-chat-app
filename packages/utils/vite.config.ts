@@ -1,10 +1,11 @@
-/// <reference types="vitest/config" />
+/// <reference types="vite" />
 import { sveltekit } from "@sveltejs/kit/vite";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig, type Plugin } from "vite";
+import type { UserConfig } from "vite";
 
-export default defineConfig({
-  plugins: [tailwindcss() as Plugin[], sveltekit()],
+export default {
+  plugins: [tailwindcss(), sveltekit()],
+  // @ts-expect-error: we should use vitest/config, but it's not up to date with vite v7
   test: {
     projects: [
       {
@@ -17,4 +18,4 @@ export default defineConfig({
       },
     ],
   },
-});
+} satisfies UserConfig;
