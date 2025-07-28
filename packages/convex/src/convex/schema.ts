@@ -17,5 +17,6 @@ export default defineSchema({
     content: v.string(),
     author: v.string(),
     createdAt: v.number(),
+    parentId: v.optional(v.id("messages")),
   }).index("by_channel", ["channelId"]),
 });

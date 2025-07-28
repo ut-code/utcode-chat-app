@@ -12,6 +12,11 @@
   const messages = useQuery(api.messages.list, () => ({
     channelId,
   }));
+
+  const messagesById = $derived(
+    new Map(messages.data?.map((message) => [message._id, message])),
+  );
+
   let messagesContainer: HTMLDivElement;
 
   function formatTime(timestamp: number) {
@@ -41,6 +46,17 @@
 <div bind:this={messagesContainer} class="flex-1 space-y-2 overflow-y-auto p-4">
   {#if messages.data}
     {#each messages.data as message (message._id)}
+      {#if message.parentId && messages.data.find((m) => m._id === message.parentId)}
+        <div class="flex items-center gap-2">
+          <span class="text-base-content/60 text-xs">返信</span>
+          <span class="text-primary font-semibold"
+            >{messagesById.get(message.parentId)?.author}</span
+          >
+          <span class="text-base-content/60 text-xs">
+            {messagesById.get(message.parentId)?.content}
+          </span>
+        </div>
+      {/if}
       <div class="flex flex-col">
         <div class="flex items-baseline gap-2">
           <span class="text-primary font-semibold">{message.author}</span>
