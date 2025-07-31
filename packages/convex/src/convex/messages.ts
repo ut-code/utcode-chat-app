@@ -17,6 +17,7 @@ export const send = mutation({
     channelId: v.id("channels"),
     content: v.string(),
     author: v.string(),
+    parentId: v.optional(v.id("messages")),
   },
   handler: async (ctx, args) => {
     await ctx.db.insert("messages", {
@@ -24,6 +25,7 @@ export const send = mutation({
       content: args.content,
       author: args.author,
       createdAt: Date.now(),
+      parentId: args.parentId,
     });
   },
 });

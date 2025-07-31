@@ -1,12 +1,14 @@
 <script lang="ts">
   import { api, type Id } from "@packages/convex";
+  import type { Doc } from "@packages/convex/src/convex/_generated/dataModel";
   import { useConvexClient, useQuery } from "convex-svelte";
 
   interface Props {
     channelId: Id<"channels">;
+    replyingTo: Doc<"messages"> | null;
   }
 
-  const { channelId }: Props = $props();
+  let { channelId, replyingTo = $bindable() }: Props = $props();
 
   const convex = useConvexClient();
   const identity = useQuery(api.users.me, {});
@@ -27,9 +29,11 @@
       channelId,
       content: messageContent.trim(),
       author: authorName.trim() || "匿名",
+      parentId: replyingTo?._id ?? undefined,
     });
 
     messageContent = "";
+    replyingTo = null;
   }
 
   function handleKeyPress(event: KeyboardEvent) {
@@ -41,6 +45,14 @@
 </script>
 
 <div class="border-base-300 bg-base-100 border-t p-4">
+  {#if replyingTo}
+    <div class="text-base-content/70 mb-2 text-sm">
+      <span class="font-semibold">返信先:</span>
+      <span class="text-primary font-semibold">{replyingTo.author}</span>
+      <span>{replyingTo.content}</span>
+    </div>
+  {/if}
+
   <div class="mb-2 flex gap-2">
     <input
       type="text"

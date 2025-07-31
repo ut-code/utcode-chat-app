@@ -1,5 +1,6 @@
 <script lang="ts">
   import { api, type Id } from "@packages/convex";
+  import type { Doc } from "@packages/convex/src/convex/_generated/dataModel";
   import { useQuery } from "convex-svelte";
   import MessageInput from "./MessageInput.svelte";
   import MessageList from "./MessageList.svelte";
@@ -13,6 +14,8 @@
   const selectedChannel = useQuery(api.channels.get, () => ({
     id: selectedChannelId,
   }));
+
+  let replyingTo = $state<Doc<"messages"> | null>(null);
 </script>
 
 <div class="border-base-300 bg-base-200 border-b p-4">
@@ -26,5 +29,5 @@
   {/if}
 </div>
 
-<MessageList channelId={selectedChannelId} />
-<MessageInput channelId={selectedChannelId} />
+<MessageList channelId={selectedChannelId} bind:replyingTo />
+<MessageInput channelId={selectedChannelId} bind:replyingTo />
