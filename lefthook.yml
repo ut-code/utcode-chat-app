@@ -6,3 +6,5 @@ pre-commit:
     - name: Prettier
       run: bun run fix:format
       stage_fixed: true
+    - name: Biome Lint
+      run: bun run check:lint
