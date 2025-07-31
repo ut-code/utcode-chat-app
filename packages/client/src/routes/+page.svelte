@@ -2,15 +2,14 @@
   import { useAuth } from "@mmailaender/convex-auth-svelte/sveltekit";
   import ChatApp from "$components/chat/ChatApp.svelte";
 
-  const isAuthenticated = $derived(useAuth().isAuthenticated);
-  const isLoading = $derived(useAuth().isLoading);
+  const auth = useAuth();
 </script>
 
-{#if isLoading}
+{#if auth.isLoading}
   <div class="flex h-screen w-full items-center justify-center">
     <span class="loading loading-dots loading-lg"></span>
   </div>
-{:else if isAuthenticated}
+{:else if auth.isAuthenticated}
   <ChatApp />
 {:else}
   <div class="hero bg-base-100 min-h-screen">
