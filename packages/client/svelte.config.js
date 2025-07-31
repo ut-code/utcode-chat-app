@@ -20,6 +20,9 @@ const config = {
       $components: "src/components",
       "~": "src/",
     },
+    env: {
+      dir: "../..",
+    },
   },
 };
 

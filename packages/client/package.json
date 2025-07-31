@@ -39,7 +39,10 @@
     "vite": "^7.0.5"
   },
   "dependencies": {
-    "@packages/convex": "workspace:convex",
+    "@auth/core": "^0.40.0",
+    "@convex-dev/auth": "^0.0.87",
+    "@mmailaender/convex-auth-svelte": "^0.0.2",
+    "@packages/convex": "workspace:*",
     "@inlang/paraglide-js": "^2.2.0",
     "@playwright/test": "^1.54.1",
     "@sveltejs/adapter-static": "^3.0.8",

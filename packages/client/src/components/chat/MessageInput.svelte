@@ -1,6 +1,6 @@
 <script lang="ts">
   import { api, type Id } from "@packages/convex";
-  import { useConvexClient } from "convex-svelte";
+  import { useConvexClient, useQuery } from "convex-svelte";
 
   interface Props {
     channelId: Id<"channels">;
@@ -9,8 +9,16 @@
   const { channelId }: Props = $props();
 
   const convex = useConvexClient();
+  const identity = useQuery(api.users.me, {});
+
   let messageContent = $state("");
-  let authorName = $state("ユーザー");
+  let authorName = $state("");
+
+  $effect(() => {
+    if (identity?.data && !authorName) {
+      authorName = identity.data.name ?? identity.data.email ?? "匿名";
+    }
+  });
 
   async function sendMessage() {
     if (!messageContent.trim()) return;
