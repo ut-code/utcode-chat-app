@@ -1,4 +1,7 @@
+import { createConvexAuthHooks } from "@mmailaender/convex-auth-svelte/sveltekit/server";
 import type { Handle } from "@sveltejs/kit";
+import { sequence } from "@sveltejs/kit/hooks";
+import { PUBLIC_CONVEX_URL } from "$lib/env";
 import { paraglideMiddleware } from "$lib/paraglide/server";
 
 const handleParaglide: Handle = ({ event, resolve }) =>
@@ -11,4 +14,6 @@ const handleParaglide: Handle = ({ event, resolve }) =>
     });
   });
 
-export const handle: Handle = handleParaglide;
+const { handleAuth } = createConvexAuthHooks({ convexUrl: PUBLIC_CONVEX_URL });
+
+export const handle: Handle = sequence(handleParaglide, handleAuth);

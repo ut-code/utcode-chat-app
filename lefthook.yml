@@ -1,4 +1,5 @@
 pre-commit:
+  parallel: true
   jobs:
     - name: Run codegen before commit
       run: bun run sync
@@ -6,3 +7,5 @@ pre-commit:
     - name: Prettier
       run: bun run fix:format
       stage_fixed: true
+    - name: Biome Lint
+      run: bun run check:lint
