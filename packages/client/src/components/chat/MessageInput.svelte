@@ -91,6 +91,9 @@
   {#if showEmojiPalette}
     <EmojiPalette
       onClose={() => (showEmojiPalette = false)}
+      onEmojiSelected={(emoji) => {
+        messageContent += emoji;
+      }}
       toggleButtonRef={emojiButtonRef}
     />
   {/if}
