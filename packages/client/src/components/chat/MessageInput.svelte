@@ -2,6 +2,7 @@
   import { api, type Id } from "@packages/convex";
   import type { Doc } from "@packages/convex/src/convex/_generated/dataModel";
   import { useConvexClient, useQuery } from "convex-svelte";
+  import EmojiPalette from "./EmojiPalette.svelte";
 
   interface Props {
     channelId: Id<"channels">;
@@ -15,6 +16,8 @@
 
   let messageContent = $state("");
   let authorName = $state("");
+  let showEmojiPalette = $state(false);
+  let emojiButtonRef = $state<HTMLElement | null>(null);
 
   $effect(() => {
     if (identity?.data && !authorName) {
@@ -77,5 +80,18 @@
     >
       送信
     </button>
+    <button
+      bind:this={emojiButtonRef}
+      class="btn btn-secondary self-end"
+      onclick={() => (showEmojiPalette = !showEmojiPalette)}
+    >
+      😀
+    </button>
   </div>
+  {#if showEmojiPalette}
+    <EmojiPalette
+      onClose={() => (showEmojiPalette = false)}
+      toggleButtonRef={emojiButtonRef}
+    />
+  {/if}
 </div>
